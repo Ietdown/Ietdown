@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href=".\R\twitch.ico" type="image/x-icon">
     <script src=".\js\twitch-title.js"></script>
+    <script src=".\js\blur-twitch-title.js"></script>
 </head>
 <body>
 
@@ -15,13 +16,20 @@
 <div id="test"></div>
 <script type="text/javascript">
   var options = {
-    width: 600,
-    height: 300,
-    channel: "bikeman",
-    parent: ["localhost"]
+    width: 1450,
+    height: 850,
+    channel: "orbt",
+    layout: "video-with-chat",
+    theme: "dark",
   };
   var player = new Twitch.Player("test", options);
 </script>
+
+<iframe id="chat_embed"
+    src="https://www.twitch.tv/embed/orbt/chat?parent=pls-touch.me"
+    height= 850
+    width= 300>
+</iframe>
 
 </body>
 </html>
