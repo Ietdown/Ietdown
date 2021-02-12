@@ -13,7 +13,7 @@
 <h1 class="h1">page for my twitch</h1>
 
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-<div id="test"></div>
+<div id="player"></div>
 <script type="text/javascript">
   var options = {
     width: 1450,
@@ -22,7 +22,7 @@
     layout: "video-with-chat",
     theme: "dark",
   };
-  var player = new Twitch.Player("test", options);
+  var player = new Twitch.Player("player", options);
 </script>
 
 <iframe id="chat_embed"
