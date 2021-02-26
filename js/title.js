@@ -1,35 +1,17 @@
-    var rev = "fwd";
-    function titlebar(val){
-        var msg  = "orbt's site";
-        var res = " ";
-        var speed = 100;
-        var pos = val;
-        msg = "   |-"+msg+"-|";
-        var le = msg.length;
-        if(rev == "fwd"){
-            if(pos < le){
-                pos = pos+1;
-                scroll = msg.substr(0,pos);
-                document.title = scroll;
-                timer = window.setTimeout("titlebar("+pos+")",speed);
-            }
-            else {
-                rev = "bwd";
-                timer = window.setTimeout("titlebar("+pos+")",speed);
-            }
-        }
-        else {
-            if(pos > 0) {
-                pos = pos-1;
-                var ale = le-pos;
-                scrol = msg.substr(ale,le);
-                document.title = scrol;
-                timer = window.setTimeout("titlebar("+pos+")",speed);
-            }
-            else {
-                rev = "fwd";
-                timer = window.setTimeout("titlebar("+pos+")",speed);
-            }
-        }
+var what = "| orbt's site |";
+var interval = 100;
+var counter = 0;
+var tick = function() {
+    var i = counter % (what.length * 2);
+    if (i == 0) {
+        document.title = "orbt's site";
+    } else if (i < what.length) {
+        document.title = what.substr(0, i);
+    } else {
+        i -= what.length;
+        i = what.length - i;
+        document.title = what.substr(-i);
     }
-    titlebar(0);
+    counter++;
+}
+setInterval(tick, interval);
